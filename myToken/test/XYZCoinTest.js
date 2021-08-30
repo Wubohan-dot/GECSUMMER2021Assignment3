@@ -78,6 +78,15 @@ it("One could transfer to others",function(){
             
         });
     });
+
+    it("An insufficient balance throws an error when trying to transfer tokens",function(){
+        return XYZCoin.deployed().then(function(instance){
+            XYZCoinInstance=instance;
+            return XYZCoinInstance.transfer(accounts[1],1200,{from:accounts[1]});
+        }).then(assert.fail).catch(function(error){
+            assert(error.message.indexOf('revert')>=0,"error message must contain revert");
+        })
+    })
                
         
     
