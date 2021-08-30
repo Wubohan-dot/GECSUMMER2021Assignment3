@@ -54,13 +54,30 @@ it("One could transfer to others",function(){
         return XYZCoin.deployed().then(function(instance) {
             XYZCoinInstance=instance;
             XYZCoinInstance.approve(accounts[1],50,{from:accounts[0]});
+            return XYZCoinInstance.allowance(accounts[0],accounts[1]);
+        }).then(function(count){
+            assert.equal(count,50,"approve and allowed")
+            return XYZCoinInstance;
+        }).then(function(instance){
+            XYZCoinInstance=instance;
             XYZCoinInstance.transferFrom(accounts[0],accounts[2],20,{from:accounts[1]});
             return XYZCoinInstance.balanceOf(accounts[2]);
         }).then(function(balance){
              assert.equal(balance.toNumber(),0,"transferFrom");
          })
     });
+        
+    it("Accounts can transfer tokens on behalf of other accounts Type",function(){
+        return XYZCoin.deployed().then(function(ainstance) {
+            ainstance.approve(accounts[1],50,{from:accounts[0]});
+            ainstance.transferFrom(accounts[0],accounts[2],20,{from:accounts[1]});
+            //console.log(ainstance.balanceOf(accounts[0]));
+            return ainstance.balanceOf(accounts[2]);
+        }).then(function(abalance){
+            assert.equal(abalance.toNumber(),20);
             
+        });
+    });
                
         
     
