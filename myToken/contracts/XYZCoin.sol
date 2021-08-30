@@ -14,6 +14,10 @@ contract XYZCoin is ERC20{
     //to get the amount of money one user allows another user to get
     mapping (address => mapping (address => uint256)) public allowed;
 
+    constructor() public{
+        balances[msg.sender]=1000;
+    }
+
     function name() public view returns (string memory){
         return _name;
     }
