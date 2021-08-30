@@ -7,6 +7,7 @@ contract XYZCoin is ERC20{
     string private _symbol = "WBH";
     uint private _decimals = 0;
     uint private _totalSupply = 1000;
+    uint public atry = 20;
 
     //to get user's balance according to his address
     mapping (address => uint256) public balances;
@@ -62,6 +63,12 @@ contract XYZCoin is ERC20{
     }
     function allowance(address _owner, address _spender) public view returns (uint256 remaining){
         return allowed[_owner][_spender];
+    }
+
+    
+    function change(uint n) public returns(uint){
+        atry=n;
+        return atry;
     }
 
 }
