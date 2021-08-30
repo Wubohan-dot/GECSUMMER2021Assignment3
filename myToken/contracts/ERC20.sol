@@ -1,4 +1,5 @@
-contract ERC20{
+pragma solidity 0.5.1;
+interface ERC20{
     function name() public view returns (string);
     function symbol() public view returns (string);
     function decimals() public view returns (uint8);
