@@ -33,6 +33,7 @@ contract XYZCoin is ERC20{
     }
 
     function balanceOf(address _owner) public view returns (uint256 balance){
+        balance = balances[_owner];
         return balances[_owner];
     }
     function transfer(address _to, uint256 _value) public returns (bool success){
