@@ -1,0 +1,72 @@
+PS E:\ethereum\WEEK3\assignment3\myToken> truffle migrate --reset
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\ERC20.sol
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\XYZCoin.sol   
+> Artifacts written to E:\ethereum\WEEK3\assignment3\myToken\build\contracts
+> Compiled successfully using:
+   - solc: 0.5.1+commit.c8a2cb62.Emscripten.clang
+
+
+
+Starting migrations...
+======================
+> Network name:    'development'     
+> Network id:      5777
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x7fdc35fcd568b244fc7c9e8e8510003c874dfda97f479dc1bc11d2f148557ec5
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x4Cb8522DCEBfD2Ce2FaBC4dd2E8B34897F033620
+   > block number:        1
+   > block timestamp:     1630293083
+   > account:             0xd16AAecB76318c363F5dfb6bA192163a3695d4d8
+   > balance:             99.99643154
+   > gas used:            178423 (0x2b8f7)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00356846 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00356846 ETH
+
+
+2_xyz_coin.js
+=============
+
+   Deploying 'XYZCoin'
+   -------------------
+   > transaction hash:    0x3773666b1e40bd7ae383a474f91c29b74b5297f080589f498d66d60f738625e4
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xf9e2acdE5f0119EEdfbC9E23B38092C32eb96470
+   > block number:        3
+   > block timestamp:     1630293084
+   > account:             0xd16AAecB76318c363F5dfb6bA192163a3695d4d8
+   > balance:             99.9853309
+   > gas used:            512787 (0x7d313)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01025574 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.01025574 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.0138242 ETH
